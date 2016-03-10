@@ -10,14 +10,14 @@ var MyComponent = React.createClass({
 	}
 });
 
-ReactDOM.render(<div>
+/*ReactDOM.render(<div>
 				<MyComponent text="Hello World">
 				Hello too.
 				</MyComponent>
 				<MyComponent text="How are you?">
 				Fine and you?
 				</MyComponent>
-				</div>, $('#container_exo1')[0]);
+				</div>, $('#container_exo1')[0]);*/
 
 /* Exercice 2 */
 var Note = React.createClass({
@@ -102,4 +102,29 @@ var Board = React.createClass({
 	}
 });
 
-ReactDOM.render(<Board />, $('#container_exo2')[0]);
+// ReactDOM.render(<Board />, $('#container_exo2')[0]);
+
+/* Exercice 3 */
+var Box = React.createClass({
+	componentWillMount: function() {
+		alert('Will mount..');
+	},
+	componentDidMount: function() {
+		alert('Did mount!');
+	},
+	render: function() {
+		return <div></div>;
+	}
+});
+
+ReactDOM.render(<Box />, $('#container_exo3')[0]);
+
+var $boxes = $('#container_exo3 div');
+
+$boxes.click(function(){
+	ReactDOM.unmountComponentAtNode($('#container_exo3')[0]);
+	alert('Unmount component!');
+});
+
+
+
